@@ -1,0 +1,47 @@
+{
+  "name": "@omni-bus/class-transformer",
+  "version": "0.1.1",
+  "description": "ISerializer for omni-bus backed by class-transformer + JSON",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "test": "jest",
+    "prepublishOnly": "tsc -b"
+  },
+  "keywords": [
+    "omni-bus",
+    "serializer",
+    "class-transformer",
+    "message-bus",
+    "typescript"
+  ],
+  "author": "Mostafa Mekawy",
+  "license": "MIT",
+  "homepage": "https://github.com/MOSMekawy/omni-bus/tree/main/libs/class-transformer#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MOSMekawy/omni-bus.git",
+    "directory": "libs/class-transformer"
+  },
+  "bugs": {
+    "url": "https://github.com/MOSMekawy/omni-bus/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@omni-bus/core": "^0.1.1",
+    "class-transformer": "^0.5.1"
+  },
+  "devDependencies": {
+    "@omni-bus/core": "*",
+    "class-transformer": "^0.5.1",
+    "reflect-metadata": "^0.2.2"
+  }
+}

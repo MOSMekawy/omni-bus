@@ -1,0 +1,48 @@
+{
+  "name": "@omni-bus/bullmq",
+  "version": "0.1.1",
+  "description": "BullMQ transport for omni-bus: durable queue + native job-return-value RPC",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "test": "jest",
+    "prepublishOnly": "tsc -b"
+  },
+  "keywords": [
+    "omni-bus",
+    "bullmq",
+    "queue",
+    "transport",
+    "message-bus",
+    "rpc",
+    "typescript"
+  ],
+  "author": "Mostafa Mekawy",
+  "license": "MIT",
+  "homepage": "https://github.com/MOSMekawy/omni-bus/tree/main/libs/bullmq#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MOSMekawy/omni-bus.git",
+    "directory": "libs/bullmq"
+  },
+  "bugs": {
+    "url": "https://github.com/MOSMekawy/omni-bus/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@omni-bus/core": "^0.1.1",
+    "bullmq": "^5.0.0"
+  },
+  "devDependencies": {
+    "@omni-bus/core": "*",
+    "bullmq": "^5.66.1"
+  }
+}

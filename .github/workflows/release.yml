@@ -1,0 +1,62 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to release (e.g. v0.1.1) — must already exist'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  id-token: write # required for npm provenance
+
+jobs:
+  publish:
+    name: Build + publish all workspace packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (tag)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.tag || github.ref }}
+
+      - name: Setup Node 22 with npm registry
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          registry-url: https://registry.npmjs.org/
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (tsc -b)
+        run: npm run build
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Verify each lib's package.json version matches the git tag
+        run: |
+          TAG_REF="${GITHUB_REF#refs/tags/}"
+          if [ -n "${{ github.event.inputs.tag }}" ]; then
+            TAG_REF="${{ github.event.inputs.tag }}"
+          fi
+          EXPECTED="${TAG_REF#v}"
+          for f in libs/*/package.json; do
+            ACTUAL=$(node -p "require('./${f}').version")
+            if [ "$ACTUAL" != "$EXPECTED" ]; then
+              echo "::error file=$f::version $ACTUAL does not match tag $TAG_REF (expected $EXPECTED)"
+              exit 1
+            fi
+          done
+
+      - name: Publish all workspace packages to npm
+        run: npm publish --workspaces --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

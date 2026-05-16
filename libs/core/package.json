@@ -1,0 +1,46 @@
+{
+  "name": "@omni-bus/core",
+  "version": "0.1.1",
+  "description": "Framework-agnostic core for omni-bus: a WolverineFX-inspired TypeScript message bus. Messages, handlers, pipeline, routing, in-memory transport.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "test": "jest",
+    "prepublishOnly": "tsc -b"
+  },
+  "keywords": [
+    "message-bus",
+    "mediator",
+    "wolverine",
+    "mediatr",
+    "cqrs",
+    "events",
+    "commands",
+    "rpc",
+    "typescript"
+  ],
+  "author": "Mostafa Mekawy",
+  "license": "MIT",
+  "homepage": "https://github.com/MOSMekawy/omni-bus#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MOSMekawy/omni-bus.git",
+    "directory": "libs/core"
+  },
+  "bugs": {
+    "url": "https://github.com/MOSMekawy/omni-bus/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.2.2",
+    "uuid": "^11.0.0"
+  }
+}

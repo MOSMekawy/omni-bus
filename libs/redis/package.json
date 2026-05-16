@@ -1,0 +1,50 @@
+{
+  "name": "@omni-bus/redis",
+  "version": "0.1.1",
+  "description": "Redis pub/sub transport for omni-bus, with correlation-ID RPC",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "test": "jest",
+    "prepublishOnly": "tsc -b"
+  },
+  "keywords": [
+    "omni-bus",
+    "redis",
+    "pubsub",
+    "transport",
+    "message-bus",
+    "rpc",
+    "typescript"
+  ],
+  "author": "Mostafa Mekawy",
+  "license": "MIT",
+  "homepage": "https://github.com/MOSMekawy/omni-bus/tree/main/libs/redis#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MOSMekawy/omni-bus.git",
+    "directory": "libs/redis"
+  },
+  "bugs": {
+    "url": "https://github.com/MOSMekawy/omni-bus/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@omni-bus/core": "^0.1.1",
+    "ioredis": "^5.0.0"
+  },
+  "devDependencies": {
+    "@omni-bus/core": "*",
+    "@types/ioredis-mock": "^8.2.5",
+    "ioredis": "^5.8.2",
+    "ioredis-mock": "^8.9.0"
+  }
+}

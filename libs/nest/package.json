@@ -1,0 +1,52 @@
+{
+  "name": "@omni-bus/nest",
+  "version": "0.1.1",
+  "description": "NestJS integration for omni-bus: NestServiceResolver + OmniBusModule",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "test": "jest",
+    "prepublishOnly": "tsc -b"
+  },
+  "keywords": [
+    "omni-bus",
+    "nestjs",
+    "message-bus",
+    "mediator",
+    "cqrs",
+    "typescript"
+  ],
+  "author": "Mostafa Mekawy",
+  "license": "MIT",
+  "homepage": "https://github.com/MOSMekawy/omni-bus/tree/main/libs/nest#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MOSMekawy/omni-bus.git",
+    "directory": "libs/nest"
+  },
+  "bugs": {
+    "url": "https://github.com/MOSMekawy/omni-bus/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0",
+    "@omni-bus/core": "^0.1.1"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^11.1.9",
+    "@nestjs/core": "^11.1.9",
+    "@nestjs/testing": "^11.1.9",
+    "@omni-bus/core": "*",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  }
+}

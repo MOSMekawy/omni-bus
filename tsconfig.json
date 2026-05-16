@@ -1,0 +1,11 @@
+{
+  "files": [],
+  "references": [
+    { "path": "libs/core" },
+    { "path": "libs/nest" },
+    { "path": "libs/class-transformer" },
+    { "path": "libs/redis" },
+    { "path": "libs/bullmq" },
+    { "path": "libs/rabbitmq" }
+  ]
+}
