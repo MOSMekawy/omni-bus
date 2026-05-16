@@ -1,2 +1,2 @@
-export type { ICommandHandler } from './i-command-handler';
-export type { IEventHandler } from './i-event-handler';
+export type { ICommandHandler } from './command-handler.interface';
+export type { IEventHandler } from './event-handler.interface';

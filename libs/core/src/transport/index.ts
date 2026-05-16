@@ -6,6 +6,6 @@ export type {
   TransportErrorHandler,
   TransportErrorContext,
   TransportErrorPhase,
-} from './i-transport';
+} from './transport.interface';
 export type { TransportCapabilities } from './transport-capabilities';
 export { InMemoryTransport } from './in-memory-transport';

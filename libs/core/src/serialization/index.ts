@@ -1,1 +1,1 @@
-export type { ISerializer } from './i-serializer';
+export type { ISerializer } from './serializer.interface';

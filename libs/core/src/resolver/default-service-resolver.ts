@@ -1,4 +1,4 @@
-import type { IServiceResolver, ResolvableConstructor } from './i-service-resolver';
+import type { IServiceResolver, ResolvableConstructor } from './service-resolver.interface';
 
 export class DefaultServiceResolver implements IServiceResolver {
   resolve<T>(ctor: ResolvableConstructor<T>): T {

@@ -1,6 +1,6 @@
 import type { Envelope } from '../envelope';
 import { Command } from '../messages';
-import type { IMessageMiddleware } from './i-message-middleware';
+import type { IMessageMiddleware } from './message-middleware.interface';
 import type { MessageContext } from './message-context';
 import { Pipeline } from './pipeline';
 

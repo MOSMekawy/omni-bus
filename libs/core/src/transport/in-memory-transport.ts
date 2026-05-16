@@ -1,5 +1,5 @@
 import type { Envelope } from '../envelope';
-import type { InboundHandler, ITransport } from './i-transport';
+import type { InboundHandler, ITransport } from './transport.interface';
 import type { TransportCapabilities } from './transport-capabilities';
 
 const CAPABILITIES: TransportCapabilities = {
